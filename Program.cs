@@ -101,120 +101,153 @@ namespace Assignment1
 
             #region Third Assignment
 
-            decimal number1, number2, addition, subtract, multiply, division;
+            //decimal number1, number2, addition, subtract, multiply, division;
 
-            Console.WriteLine("Type number 1: ");
-            number1 = Convert.ToDecimal(Console.ReadLine());
+            //Console.WriteLine("Type number 1: ");
+            //number1 = Convert.ToDecimal(Console.ReadLine());
 
-            Console.WriteLine("Type number 2: ");
-            number2 = Convert.ToDecimal(Console.ReadLine());
+            //Console.WriteLine("Type number 2: ");
+            //number2 = Convert.ToDecimal(Console.ReadLine());
 
-            addition = Add(number1, number2);
-            subtract = Subtract(number1, number2);
-            multiply = Multiply(number1, number2);
+            //addition = Add(number1, number2);
+            //subtract = Subtract(number1, number2);
+            //multiply = Multiply(number1, number2);
 
 
-            Console.WriteLine($"Sum : {addition} \nSubtract: {subtract} \n" +
-                              $"Multiply: {multiply}");
-            if (number2 == 0m)
+            //Console.WriteLine($"Sum : {addition} \nSubtract: {subtract} \n" +
+            //                  $"Multiply: {multiply}");
+            //if (number2 == 0m)
+            //{
+            //    Console.WriteLine("Division : Sorry, can not divide by zero!");
+            //}
+            //else
+            //{
+            //    division = Divide(number1, number2);
+            //    Console.WriteLine($"Division: {division}");
+            //}
+            //Console.WriteLine("*************************************************");
+
+            //int size, number, numberOfOcurrence;
+            //int[] array;
+
+
+            //Console.Write("Type the size of the integer array: ");
+            //size = Convert.ToInt32(Console.ReadLine());
+
+            //array = new int[size];
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write($"Type number {i + 1} : ");
+            //    array[i] = Convert.ToInt32(Console.ReadLine());
+            //}
+            //Console.Write("Type number to count its occurrence :");
+            //number = Convert.ToInt32(Console.ReadLine());
+
+            //numberOfOcurrence = 0;
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    if (number == array[i])
+            //    {
+            //        numberOfOcurrence++;
+            //    }
+            //}
+            //Console.WriteLine($"The number {number} occurred {numberOfOcurrence} time(s);");
+            //Console.WriteLine("*****************************************************************");
+
+            //int sizeOfArray;
+            //int[] arr;
+            //Console.Write("Type the size of the integer array to reverse: ");
+            //sizeOfArray = Convert.ToInt32(Console.ReadLine());
+            //arr = new int[sizeOfArray];
+
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    Console.Write($"Type number {i + 1} : ");
+            //    arr[i] = Convert.ToInt32(Console.ReadLine());
+            //}
+            //for (int i = 0; i < arr.Length / 2; i++)
+            //{
+            //    int temp = arr[arr.Length - 1 - i];
+            //    arr[arr.Length - 1 - i] = arr[i];
+            //    arr[i] = temp;
+            //}
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    Console.WriteLine($"Number {i + 1} = {arr[i]}");
+            //}
+            //Console.WriteLine("*****************************************************************");
+
+            //int _sizeOfArray;
+            //int[] _arr;
+            //bool[] _indexes;
+            //Console.Write("Type the size of the integer array to remove duplicates: ");
+            //_sizeOfArray = Convert.ToInt32(Console.ReadLine());
+            //_arr = new int[_sizeOfArray];
+            //_indexes = new bool[_sizeOfArray];
+
+            //for (int i = 0; i < _arr.Length; i++)
+            //{
+            //    Console.Write($"Type number {i + 1} : ");
+            //    _arr[i] = Convert.ToInt32(Console.ReadLine());
+            //    _indexes[i] = true;
+            //}
+
+            //for (int i = 0; i < _arr.Length; i++)
+            //{
+            //    int temp = _arr[i];
+
+            //    for (int j = i + 1; j < _arr.Length; j++)
+            //    {
+            //        if (temp == _arr[j])
+            //        {
+            //            _indexes[j] = false;
+            //        }
+
+            //    }
+            //}
+            //Console.WriteLine("\nNon Duplicate Numbers are :");
+            //for (int i = 0; i < _indexes.Length; i++)
+            //{
+            //    if(_indexes[i] == true)
+            //    {
+            //        Console.WriteLine($"Number {i + 1} : {_arr[i]}");
+            //    }
+            //}
+
+
+            #endregion
+
+            #region OOP Day1
+            Employee emp = new Employee();
+            emp.Name = "Ahmed";
+            emp.Address = "Address of Ahmed";
+            emp.SetSalary(4000);
+            emp.SetPhone("01226056541");
+            emp.IncreaseSalary(500);
+            emp.Display();
+
+            Console.WriteLine("*******************************************");
+            Employee[] employees = new Employee[3];
+            for (int i = 0; i < employees.Length; i++)
             {
-                Console.WriteLine("Division : Sorry, can not divide by zero!");
-            }
-            else
-            {
-                division = Divide(number1, number2);
-                Console.WriteLine($"Division: {division}");
-            }
-            Console.WriteLine("*************************************************");
+                employees[i] = new Employee();
+                Console.Write($"Type name of employee {i + 1} : ");
+                employees[i].Name = Console.ReadLine();
+                Console.Write("Type address : ");
+                employees[i].Address = Console.ReadLine();
+                Console.Write("Type Phone number : ");
+                string phone = Console.ReadLine();
+                employees[i].SetPhone(phone);
+                Console.Write("Type Salary : ");
+                employees[i].SetSalary(Convert.ToDecimal(Console.ReadLine()));
+                Console.Write("Type salary increment : ");
+                employees[i].IncreaseSalary(Convert.ToDecimal(Console.ReadLine()));
 
-            int size, number, numberOfOcurrence;
-            int[] array;
-
-
-            Console.Write("Type the size of the integer array: ");
-            size = Convert.ToInt32(Console.ReadLine());
-
-            array = new int[size];
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($"Type number {i + 1} : ");
-                array[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.Write("Type number to count its occurrence :");
-            number = Convert.ToInt32(Console.ReadLine());
-
-            numberOfOcurrence = 0;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (number == array[i])
-                {
-                    numberOfOcurrence++;
-                }
-            }
-            Console.WriteLine($"The number {number} occurred {numberOfOcurrence} time(s);");
-            Console.WriteLine("*****************************************************************");
-
-            int sizeOfArray;
-            int[] arr;
-            Console.Write("Type the size of the integer array to reverse: ");
-            sizeOfArray = Convert.ToInt32(Console.ReadLine());
-            arr = new int[sizeOfArray];
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write($"Type number {i + 1} : ");
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            for (int i = 0; i < arr.Length / 2; i++)
-            {
-                int temp = arr[arr.Length - 1 - i];
-                arr[arr.Length - 1 - i] = arr[i];
-                arr[i] = temp;
-            }
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.WriteLine($"Number {i + 1} = {arr[i]}");
-            }
-            Console.WriteLine("*****************************************************************");
-
-            int _sizeOfArray;
-            int[] _arr;
-            bool[] _indexes;
-            Console.Write("Type the size of the integer array to remove duplicates: ");
-            _sizeOfArray = Convert.ToInt32(Console.ReadLine());
-            _arr = new int[_sizeOfArray];
-            _indexes = new bool[_sizeOfArray];
-            
-            for (int i = 0; i < _arr.Length; i++)
-            {
-                Console.Write($"Type number {i + 1} : ");
-                _arr[i] = Convert.ToInt32(Console.ReadLine());
-                _indexes[i] = true;
-            }
-           
-            for (int i = 0; i < _arr.Length; i++)
-            {
-                int temp = _arr[i];
-                
-                for (int j = i + 1; j < _arr.Length; j++)
-                {
-                    if (temp == _arr[j])
-                    {
-                        _indexes[j] = false;
-                    }
-                  
-                }
-            }
-            Console.WriteLine("\nNon Duplicate Numbers are :");
-            for (int i = 0; i < _indexes.Length; i++)
-            {
-                if(_indexes[i] == true)
-                {
-                    Console.WriteLine($"Number {i + 1} : {_arr[i]}");
-                }
+                Console.WriteLine("\n*****************************\nEmployee Details :");
+                employees[i].Display();
+                Console.WriteLine("****************************************************\n");
             }
 
-            
             #endregion
         }
 
