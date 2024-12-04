@@ -9,11 +9,29 @@ namespace Assignment1
     public class Employee
     {
         private int Id = Random.Shared.Next(1000, 5000);
-        public string Name;
-        private string Phone;
-        public string Address;
-        private decimal Salary;
+        private string _name;
+        private string _phone;
+        private string _address;
+        private decimal _salary;
 
+        public string Name { get { return _name; } set { _name = value; } }
+        public string Phone { get { return _phone; } set { _phone = value; } }
+        public string Address { get { return _address; } set { _address = value; } }
+        public decimal Salary { get { return _salary; } set { _salary = value; } }
+
+        public Employee(string name, string phone, string address, decimal salary)
+        {
+
+            Name = name;
+            Phone = phone;
+            Address = address;
+            Salary = salary;
+
+        }
+        public Employee() : this("", "", "", 0)
+        {
+
+        }
         public void SetSalary(decimal salary)
         {
             if (salary > 6000)
